@@ -1,8 +1,12 @@
-// 함수의 타입을 결정하기 위해서는 '매개변수(parameter) 타입', '반환 값(return value) 타입'의 정보가 필요하다.
+## 함수 타입
 
-// 함수의 매개변수에 타입을 정의하는 방식
-// 매개변수의 경우 변수의 타입을 표기할 때와 마찬가지로 매개변수 뒤에 콜론(:)을 붙이고 타입을 적는다.
-// ex) param: number
+> 함수의 타입을 결정하기 위해서는 '매개변수(parameter) 타입', '반환 값(return value) 타입'의 정보가 필요하다.
+>
+> 함수의 매개변수에 타입을 정의하는 방식  
+> 매개변수의 경우 변수의 타입을 표기할 때와 마찬가지로 매개변수 뒤에 콜론(:)을 붙이고 타입을 적는다.  
+> ex) ` param: number`
+
+```typescript
 function sum(a: number, b: number) {
   return a + b;
 }
@@ -25,18 +29,19 @@ function logGreetings(name: string): void {
 function sumNumber(a: number, b: number): number {
   return a + b;
 }
-// sum(10);  error, too few parameters
+sum(10); // error: too few parameters
 sum(10, 20); // 30
-// sum(10, 20, 30, 40); error: too many parameters
+sum(10, 20, 30, 40); // error: too many parameters
 
 // 함수의 옵셔널 파라미터
 // 타입 안정성을 확보하기 위해 선택 매개변수를 지원
 // 함수의 매개변수 이름 뒤에 '?' 기호를 붙여 해당 매개변수가 생략될 수 있음을 명시
 // 매개변수 정의 시 선택 매개변수 이후에 필수 매개변수를 두는 것은 허용하지 않는다.
-// ❌ function log(a?: string, b: string) {
+// ❌ function log(a?: string, b: string) { ... }
 function log(a: string, b?: string) {
   console.log(`Hello, ${a}`);
 }
 log('hello');
 log('hello', 'abc');
-//log('hello', 'abc', 'hi'); error: too many parameters
+log('hello', 'abc', 'hi'); // error: too many parameters
+```

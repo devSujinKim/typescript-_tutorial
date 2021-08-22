@@ -24,3 +24,11 @@
 ## 이넘
 
 > [이넘](class-note/6_enum.md)
+
+## 클래스
+
+> [클래스](class-note/7_class.md)
+
+## 제네릭
+
+> [제네릭](class-note/8_generics.md)

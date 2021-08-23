@@ -28,3 +28,17 @@ function logText<T>(text: T): T {
 logText<string>('hi');
 logText<boolean>(true);
 ```
+
+## 인터페이스에 제네릭을 선언하는 방법
+
+```typescript
+interface Dropdown<T> {
+  value: T;
+  selected: boolean;
+}
+
+const obj: Dropdown<string> = {
+  value: 'abc',
+  selected: false,
+};
+```

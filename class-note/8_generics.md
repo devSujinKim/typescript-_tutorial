@@ -42,3 +42,51 @@ const obj: Dropdown<string> = {
   selected: false,
 };
 ```
+
+## 제네릭의 타입 제한
+
+```typescript
+function logTextLength<T>(text: T[]): T[] {
+  text.forEach(function (text) {
+    console.log(text);
+  });
+  return text;
+}
+logTextLength<string>(['hi', 'bye']);
+logTextLength<string>('hi'); // error
+```
+
+## 제네릭의 타입 제한 - 정의된 타입 이용하기
+
+```typescript
+interface LengthType {
+  length: number;
+}
+
+function logTextLength<T extends LengthType>(text: T): T {
+  text.length;
+  return text;
+}
+logTextLength('a');
+logTextLength({ length: 10 });
+logTExtLength(10); // error
+```
+
+## 제네릭의 타입 제한 - keyof
+
+```typescript
+interface ShoppingItem {
+  name: string;
+  price: number;
+  stock: number;
+}
+
+function getShoppingItemOption<T extends keyof ShoppingItem>(itemOption: T): T {
+  return itemOption;
+}
+getShoppingItemOption(10); // error
+getShoppingItemOption<string>('a'); // error
+getShoppingItemOption('name');
+getShoppingItemOption('price');
+getShoppingItemOption('stock');
+```

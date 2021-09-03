@@ -32,3 +32,7 @@
 ## 제네릭
 
 > [제네릭](class-note/8_generics.md)
+
+## 타입 추론
+
+> [타입 추론](class-note/9_type-inference.md)
